@@ -245,6 +245,9 @@ class DatePicker extends Component {
 
   onPressDate() {
     if (this.props.disabled) {
+      if (this.props.onDisabledPress){
+        this.props.onDisabledPress();
+      }
       return true;
     }
 
@@ -356,7 +359,7 @@ class DatePicker extends Component {
               <View style={dateInputStyle}>
                 {this.getTitleElement()}
               </View>
-            :
+              :
               <View/>
           }
           {this._renderIcon()}
