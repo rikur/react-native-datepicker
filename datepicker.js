@@ -94,7 +94,7 @@ class DatePicker extends Component {
     if (typeof this.props.onPressMask === 'function') {
       this.props.onPressMask();
     } else {
-      this.onPressCancel();
+      this.onPressConfirm();
     }
   }
 
@@ -375,7 +375,7 @@ class DatePicker extends Component {
             animationType="none"
             visible={this.state.modalVisible}
             supportedOrientations={SUPPORTED_ORIENTATIONS}
-            onRequestClose={() => {this.onPressConfirm();}}
+            onRequestClose={() => {this.setModalVisible(false);}}
           >
             <View
               style={{flex: 1}}
