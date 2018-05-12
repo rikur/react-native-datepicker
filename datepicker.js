@@ -368,7 +368,7 @@ class DatePicker extends Component {
             animationType="none"
             visible={this.state.modalVisible}
             supportedOrientations={SUPPORTED_ORIENTATIONS}
-            onRequestClose={() => {this.setModalVisible(false);}}
+            onRequestClose={() => {this.onPressConfirm();}}
           >
             <View
               style={{flex: 1}}
@@ -398,26 +398,6 @@ class DatePicker extends Component {
                         style={[Style.datePicker, customStyles.datePicker]}
                       />
                     </View>
-                    <TouchableComponent
-                      underlayColor={'transparent'}
-                      onPress={this.onPressCancel}
-                      style={[Style.btnText, Style.btnCancel, customStyles.btnCancel]}
-                      testID={cancelBtnTestID}
-                    >
-                      <Text
-                        style={[Style.btnTextText, Style.btnTextCancel, customStyles.btnTextCancel]}
-                      >
-                        {cancelBtnText}
-                      </Text>
-                    </TouchableComponent>
-                    <TouchableComponent
-                      underlayColor={'transparent'}
-                      onPress={this.onPressConfirm}
-                      style={[Style.btnText, Style.btnConfirm, customStyles.btnConfirm]}
-                      testID={confirmBtnTestID}
-                    >
-                      <Text style={[Style.btnTextText, customStyles.btnTextConfirm]}>{confirmBtnText}</Text>
-                    </TouchableComponent>
                   </Animated.View>
                 </TouchableComponent>
               </TouchableComponent>
