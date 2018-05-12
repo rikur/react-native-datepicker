@@ -422,7 +422,7 @@ DatePicker.defaultProps = {
   androidMode: 'default',
   date: '',
   // component height: 216(DatePickerIOS) + 1(borderTop) + 42(marginTop), IOS only
-  height: 259,
+  height: 217,
 
   // slide animation duration time, default to 300ms, IOS only
   duration: 300,
