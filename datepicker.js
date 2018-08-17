@@ -359,6 +359,9 @@ class DatePicker extends Component {
         underlayColor={'transparent'}
         onPress={this.onPressDate}
         testID={testID}
+        hitSlop={{
+          top: 10, left: 10, right: 10, bottom: 10,
+        }}
       >
         <View style={[Style.dateTouchBody, customStyles.dateTouchBody]}>
           {
