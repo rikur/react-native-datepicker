@@ -94,7 +94,7 @@ class DatePicker extends Component {
     if (typeof this.props.onPressMask === 'function') {
       this.props.onPressMask();
     } else {
-      this.onPressConfirm();
+      this.onPressCancel();
     }
   }
 
@@ -409,6 +409,26 @@ class DatePicker extends Component {
                         locale={locale}
                       />
                     </View>
+                    <TouchableComponent
+                      underlayColor={'transparent'}
+                      onPress={this.onPressCancel}
+                      style={[Style.btnText, Style.btnCancel, customStyles.btnCancel]}
+                      testID={cancelBtnTestID}
+                    >
+                      <Text
+                        style={[Style.btnTextText, Style.btnTextCancel, customStyles.btnTextCancel]}
+                      >
+                        {cancelBtnText}
+                      </Text>
+                    </TouchableComponent>
+                    <TouchableComponent
+                      underlayColor={'transparent'}
+                      onPress={this.onPressConfirm}
+                      style={[Style.btnText, Style.btnConfirm, customStyles.btnConfirm]}
+                      testID={confirmBtnTestID}
+                    >
+                      <Text style={[Style.btnTextText, customStyles.btnTextConfirm]}>{confirmBtnText}</Text>
+                    </TouchableComponent>
                   </Animated.View>
                 </TouchableComponent>
               </TouchableComponent>
@@ -425,7 +445,7 @@ DatePicker.defaultProps = {
   androidMode: 'default',
   date: '',
   // component height: 216(DatePickerIOS) + 1(borderTop) + 42(marginTop), IOS only
-  height: 217,
+  height: 259,
 
   // slide animation duration time, default to 300ms, IOS only
   duration: 300,
